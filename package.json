@@ -1,0 +1,34 @@
+{
+  "name": "data.primariasector1.ro",
+  "version": "0.0.1",
+  "description": "Open Data - Primaria Sectorului 1",
+  "main": "index.js",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
+  },
+  "scripts": {
+    "build": "npm-run-all build:css build:html",
+    "build:css": "postcss src/_includes/css/tailwind.css -o src/assets/css/screen.css",
+    "build:html": "eleventy",
+    "watch": "npm-run-all --parallel watch:css watch:html",
+    "watch:css": "postcss src/_includes/css/tailwind.css -o src/assets/css/screen.css --watch",
+    "watch:html": "eleventy --serve",
+    "start": "npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primarias1/open-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/primarias1/open-data/issues"
+  },
+  "homepage": "https://github.com/primarias1/open-data#readme"
+}

@@ -1,0 +1,13 @@
+# Environment normalization
+/.env
+/.docker-compose.override.yml
+/.idea
+/node_modules
+/REVISION
+
+# macOS
+.DS_Store
+
+# Local site output
+/release
+/src/assets/css/*.css
