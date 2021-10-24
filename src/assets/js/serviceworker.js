@@ -9,7 +9,7 @@ addEventListener("install", event => {
                     "/assets/font/AtkinsonHyperlegible-Bold-kern-latin.woff2",
                     "/assets/font/AtkinsonHyperlegible-Bold-hint-all.woff2",
                     "/assets/font/AtkinsonHyperlegible-Regular-kern-latin.woff2",
-                    "/assets/font/AtkinsonHyperlegible-Regularr-hint-all.woff2"
+                    "/assets/font/AtkinsonHyperlegible-Regular-hint-all.woff2"
                 ]);
             })
     );

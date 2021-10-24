@@ -42,6 +42,7 @@ module.exports = {
         },
         extend: {}
     },
+    darkMode: false,
     variants: {
         extend: {},
     },

@@ -2,6 +2,9 @@ module.exports = function (config) {
 
     // Copy all the assets files directly
     config.addPassthroughCopy("./src/assets");
+    config.setLiquidOptions({
+        dynamicPartials: true
+    });
 
     return {
         dir: {

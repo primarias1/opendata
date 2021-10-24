@@ -18,74 +18,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
 
-    <link rel="preload" href="/assets/font/AtkinsonHyperlegible-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/font/AtkinsonHyperlegible-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {% include 'header/_typography' %}
 
-    <style>
-        @font-face {
-            font-family: "Atkinson Hyperlegible";
-            src: url(/assets/font/AtkinsonHyperlegible-Bold-kern-latin.woff2) format("woff2"),
-            url(/assets/font/AtkinsonHyperlegible-Bold-kern-latin.woff2) format("woff");
-            font-weight: 700;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: "Atkinson Hyperlegible";
-            src: url(/assets/font/AtkinsonHyperlegible-Regular-kern-latin.woff2) format("woff2"),
-            url(/assets/font/AtkinsonHyperlegible-Regular-kern-latin.woff) format("woff");
-            font-weight: 400;
-            font-display: swap;
-        }
-    </style>
-
-    <script>
-        if( "fonts" in document ) {
-            var regular = new FontFace("Atkinson Hyperlegible", "url(/assets/font/AtkinsonHyperlegible-Regular-hint-all.woff2) format('woff2'), url(/assets/font/AtkinsonHyperlegible-Regular-hint-all.woff) format('woff')");
-            var bold = new FontFace("Atkinson Hyperlegible", "url(/assets/font/AtkinsonHyperlegible-Bold-hint-all.woff2) format('woff2'), url(/assets/font/AtkinsonHyperlegible-Bold-hint-all.woff) format('woff')", { weight: "700" });
-
-            Promise.all([ bold.load(), regular.load() ]).then(function(fonts) {
-                fonts.forEach(function(font) {
-                    document.fonts.add(font);
-                });
-            });
-        }
-    </script>
-
-    <script>
-        if(!("fonts" in document) && "head" in document) {
-            // Awkwardly dump the second stage @font-face blocks in the head
-            var style = document.createElement("style");
-            // Note: Edge supports WOFF2
-            style.innerHTML = "@font-face { font-family: 'Atkinson Hyperlegible'; src: url(/assets/font/AtkinsonHyperlegible-Regular-hint-all.woff2) format('woff2'), url(/assets/font/AtkinsonHyperlegible-Regular-hint-all.woff) format('woff'); } @font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 700; src: url(/assets/font/AtkinsonHyperlegible-Bold-hint-all.woff2) format('woff2'), url(/assets/font/AtkinsonHyperlegible-Bold-hint-all.woff) format('woff'); }";
-            document.head.appendChild(style);
-        }
-    </script>
-
-    <script>
-        // Service Worker for repeat views
-        if( navigator.serviceWorker ) {
-            window.addEventListener("load", function(_event) {
-                navigator.serviceWorker.register("/assets/js/serviceworker.js")
-                    .then(function( registration ) {
-                        console.log( "Service Worker success:", registration.scope );
-                    }).catch(function( error ) {
-                    console.log( "Service Worker error:", error );
-                });
-            });
-        }
-    </script>
 </head>
 <body class="font-sans">
 
-<div class="container max-w-3xl mx-auto px-20 py-10">
-    <section class="mt-16">
-        <h1 class="text-5xl font-bold mb-6">
-            Open Data
-        </h1>
-        <p class="text-lg text-gray-500">
-            Acest site conține o serie de date pentru uz public.
-        </p>
-    </section>
+<div class="h-16 border-t-4 border-indigo-600">
+
+    <div class="container w-full max-w-6xl mx-auto py-4">
+        <div class="flex-auto flex">
+            <div class="flex-none flex mr-2">
+                <img src="/assets/img/android-chrome-192x192.png" alt="" class="w-16 h-16" />
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold mb-0">Primăria Sectorului 1</h1>
+                <h2 class="text-l">Date deschise și transparență decizională</h2>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 </body>
