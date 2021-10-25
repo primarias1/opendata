@@ -29,17 +29,22 @@
 
         <div class="container w-full max-w-6xl mx-auto py-6 border-b border-gray-300 border-opacity-40">
             {% include 'header/navbar' %}
-
-
         </div>
 
+        {% if hero %}
         <div class="container w-full max-w-6xl mx-auto mt-8 px-8 py-4 text-white">
             <div>
-                <h1 class="text-4xl font-bold mb-4">Portalul de date deschise al Sectorului 1</h1>
+                <h1 class="text-4xl font-bold mb-4">{{ hero.title }}</h1>
 
-                <p class="text-2xl">Un sample test</p>
+                <p class="text-2xl">{{ hero.description }}</p>
             </div>
         </div>
+        {% endif %}
+    </div>
+
+
+    <div class="container w-full max-w-6xl mx-auto py-6">
+        {{ content }}
     </div>
 
 </div>
