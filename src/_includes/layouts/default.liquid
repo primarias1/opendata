@@ -5,38 +5,41 @@
     <meta charset="utf-8">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
-    <meta name="robots" content="follow, index" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover"/>
+    <meta name="robots" content="follow, index"/>
 
-    <meta name="description" content="{{ description | default: site.description }}" />
+    <meta name="description" content="{{ description | default: site.description }}"/>
 
-    <link rel="canonical" href="https://data.primariasector1.ro{{ page.url }}" />
+    <link rel="canonical" href="https://data.primariasector1.ro{{ page.url }}"/>
 
-    <link rel="stylesheet" href="/assets/css/screen.css" />
+    <link rel="stylesheet" href="/assets/css/screen.css"/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png"/>
 
-    {% include 'header/_typography' %}
+    {% include 'header/typography' %}
 
 </head>
 <body class="font-sans">
 
-<div class="h-16 border-t-4 border-indigo-600">
+<div class="">
 
-    <div class="container w-full max-w-6xl mx-auto py-4">
-        <div class="flex-auto flex">
-            <div class="flex-none flex mr-2">
-                <img src="/assets/img/android-chrome-192x192.png" alt="" class="w-16 h-16" />
-            </div>
-            <div>
-                <h1 class="text-3xl font-bold mb-0">Primăria Sectorului 1</h1>
-                <h2 class="text-l">Date deschise și transparență decizională</h2>
-            </div>
+    <div class="bg-blue-900 py-2 ">
+
+        <div class="container w-full max-w-6xl mx-auto py-6 border-b border-gray-300 border-opacity-40">
+            {% include 'header/navbar' %}
+
 
         </div>
 
+        <div class="container w-full max-w-6xl mx-auto mt-8 px-8 py-4 text-white">
+            <div>
+                <h1 class="text-4xl font-bold mb-4">Portalul de date deschise al Sectorului 1</h1>
+
+                <p class="text-2xl">Un sample test</p>
+            </div>
+        </div>
     </div>
 
 </div>
