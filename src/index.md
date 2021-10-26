@@ -5,10 +5,12 @@ description: |
     de la nivelul Sectorului 1, pentru a ajuta publicul să găsească, să descarce și să folosească
     informațiile generate și deținute de structurile administrative locale.
 ---
-# Buget și execuție bugetară
-
 # Achiziții publice și anunțuri
 
-# Seturi de date
+În vederea asigurării transparenței decizionale, contractele de achiziție publică
+sau anunțurile de intenție, participare sau atribuire publică formulate de
+aparatul de specialitate al Primăriei Sectorului 1, de către Compania de Investiții
+și Dezvoltare în Sănătate și Domenii de Interes Public-Privat Sector 1 sunt publicate
+în format electronic.
 
-# Monitorul Oficial Local
+[Mai multe detalii](/achizitii/)
