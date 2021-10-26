@@ -24,27 +24,24 @@
 <body class="font-sans">
 
 <div>
+    <div class="bg-blue-900">
+        <header class="container w-full max-w-6xl mx-auto px-8 py-6 border-b border-gray-300 border-opacity-40">
+            {% include 'header/navbar' %}
+        </header>
 
-    <div class="bg-blue-900 py-2">
-        {% include 'header/navbar' %}
-
-        <div class="container w-full max-w-6xl mx-auto my-8 px-8 py-4 text-white">
+        <div class="container w-full max-w-6xl mx-auto px-8 py-10 text-white">
             <div>
                 <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
-
                 <p class="text-2xl">{{ description }}</p>
             </div>
         </div>
     </div>
 
-
-    <div class="container mt-4 w-full max-w-6xl mx-auto py-6">
+    <div class="container w-full max-w-6xl mx-auto px-8 pt-10">
         <div class="prose">
             {{ content }}
         </div>
     </div>
-
-
 </div>
 
 </body>
