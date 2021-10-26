@@ -5,6 +5,11 @@ module.exports = function (config) {
     config.setLiquidOptions({
         dynamicPartials: true
     });
+    // Allow excerpts
+    config.setFrontMatterParsingOptions({
+        // Note: default separator is ---
+        excerpt: true
+    })
 
     return {
         dir: {

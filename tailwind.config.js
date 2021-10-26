@@ -44,9 +44,14 @@ module.exports = {
     },
     darkMode: false,
     variants: {
-        extend: {},
+        extend: {
+            borderWidth: ['hover']
+        },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/forms'),
+    ],
     purge: [
         './src/**/*.liquid'
     ],
