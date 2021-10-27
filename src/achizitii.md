@@ -8,7 +8,7 @@ description: |
     în format electronic.
 ---
 
-# Contracte de achiziții publice
+## Contracte de achiziții publice
 
 <table class="table-fixed">
     <thead>
@@ -17,7 +17,7 @@ description: |
         <th scope="col" class="w-52">Operator economic</th>
         <th scope="col" class="w-48">Durata</th>
         <th scope="col">Denumire</th>
-        <th scope="col" class="w-20">Preț</th>
+        <th scope="col" class="w-20">Valoare</th>
     </tr>
     </thead>
     <tbody>
@@ -27,7 +27,7 @@ description: |
             <td>
                 <div>{{ contract.seller.name }}</div>
                 <div class="text-sm text-gray-500">
-                    CUI <a href="https://www.confidas.ro/profil/{{contract.seller.fiscalCode}}/">{{contract.seller.fiscalCode }}</a>
+                    CUI <a href="https://www.confidas.ro/profil/{{ contract.seller.fiscalCode }}/">{{ contract.seller.fiscalCode }}</a>
                 </div>
             </td>
             <td>
@@ -43,9 +43,44 @@ description: |
     </tbody>
 </table>
 
-<p class="text-sm text-gray-500 italic">Toate prețurile includ TVA.</p> 
+## Anunțuri de participare
 
-#### Legendă
+<table class="table-fixed">
+    <thead>
+    <tr>
+        <th scope="col" class="w-20">Instituție</th>
+        <th scope="col" class="w-28">Cod SEAP</th>
+        <th scope="col">Obiectul achiziției</th>
+        <th scope="col" class="w-48">Procedură</th>
+        <th scope="col" class="w-32">Valoare estimată</th>
+    </tr>
+    </thead>
+    <tbody>
+        {%- for ann in seapAnnouncements -%}
+        <tr>
+            <td><abbr title="{{ ann.buyer.name }}">{{ ann.buyer.shortName }}</abbr></td>
+            <td>
+                <div class="text-sm text-gray-500">
+                    <a href="https://e-licitatie.ro/pub/notices/c-notice/v2/view/{{ann.id}}/">{{ ann.code }}</a>
+                </div>
+            </td>
+            <td>
+                {{ ann.name }}
+            </td>
+            <td>
+                <span class="px-2 inline-flex leading-5 rounded-full bg-green-100 text-green-800">
+                  Licitație deschisă
+                </span>
+            </td>
+            <td class="text-right">{{ ann.value | currency }}</td>
+        </tr>
+        {%- endfor -%}
+    </tbody>
+</table>
+
+<div class="container bg-gray-100 px-8 py-2 text-sm">
+
+### Legendă
 
 * **S1MB**: Sectorul 1 al Muncipiului București, reprezentând aparatul de specialitate al Primarului Sectorului 1 
   și toate instituțiile subordonate direct primarului
@@ -54,7 +89,8 @@ description: |
 * **CIDSDIPPS**: Compania de Investiții și Dezvoltare în Sănătate și Domenii de Interes Public-Privat Sector 1 S.A.
 * **CMC**: Complexul Multifuncțional Caraiman
 
-## Legislație
+
+### Legislație
 
 Lista de legi și hotărâri de consiliu local în baza cărora sunt publicate contractele
 de achiziții publice și anunțurile de participare la nivelul Sectorului 1:
@@ -72,3 +108,5 @@ de achiziții publice și anunțurile de participare la nivelul Sectorului 1:
 [l98]: http://legislatie.just.ro/Public/DetaliiDocument/178667
 [hcl233]: https://primariasector1.ro/download/hotarari-consiliu-2015/hot-233.docx
 [hcl64]: https://primariasector1.ro/download/hotarari-consiliu-2021/64.2021_Anonimizat.pdf
+
+</div>
