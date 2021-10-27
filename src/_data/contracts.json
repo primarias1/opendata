@@ -1,0 +1,66 @@
+[
+  {
+    "buyer": {
+      "name": "Sectorul 1 al Muncipiului București",
+      "shortName": "S1MB"
+    },
+    "seller": {
+      "name": "CIDSDIPPS",
+      "fiscalCode": "40311936"
+    },
+    "signDate": "2021-02-23",
+    "startDate": "2021-02-23",
+    "endDate": "2021-12-31",
+    "value": 1249500,
+    "name": "Servicii de casierie, mici reparații, gospodărire a unor imobile",
+    "documentUrl": "https://primariasector1.ro/download/anunturi-achizitii-publice/2021/J-AC%201%20din%2023.02.2021%20Servicii%20de%20casierie%20mici%20reparatii%20si%20gospodarire%20imobile%20S1.pdf"
+  },
+  {
+    "buyer": {
+      "name": "Sectorul 1 al Muncipiului București",
+      "shortName": "S1MB"
+    },
+    "seller": {
+      "name": "POLS SECURITY SRL",
+      "fiscalCode": "25612587"
+    },
+    "signDate": "2021-03-01",
+    "startDate": "2021-03-01",
+    "endDate": "2021-04-30",
+    "value": 3494996.29,
+    "name": "Servicii de pază pentru unitățile de învățământ, unitățile sanitare și piețele agroalimentare",
+    "documentUrl": "https://primariasector1.ro/download/anunturi-achizitii-publice/2021/J-AC%202%20din%2001.03.2021%20Servicii%20paz%C4%83.pdf"
+  },
+  {
+    "buyer": {
+      "name": "Sectorul 1 al Muncipiului București",
+      "shortName": "S1MB"
+    },
+    "seller": {
+      "name": "ALPHA SERVICE INOV SRL",
+      "fiscalCode": "25553308"
+    },
+    "signDate": "2021-03-01",
+    "startDate": "2021-03-01",
+    "endDate": "2021-12-31",
+    "value": 249477.31,
+    "name": "Servicii de curățenie și igienizare",
+    "documentUrl": "https://primariasector1.ro/download/anunturi-achizitii-publice/2021/J-AC%203%20din%2001.03.2021%20Servicii%20de%20cur%C4%83%C8%9Benie%20%C8%99i%20igienizare.pdf"
+  },
+  {
+    "buyer": {
+      "name": "Complexul Multifuncțional Caraiman",
+      "shortName": "CMC"
+    },
+    "seller": {
+      "name": "INSTAL STING SRL",
+      "fiscalCode": "18066032"
+    },
+    "signDate": "2021-09-28",
+    "startDate": "2021-09-28",
+    "endDate": "2021-12-31",
+    "value": 16019.78,
+    "name": "Lucrare de ignifugare a sarpantei acoperisului pentru corpul de clădire Centru de recuperare - Centru de zi Alzheimer",
+    "documentUrl": "https://primariasector1.ro/download/anunturi-achizitii-publice/2021/J-AC%203%20din%2001.03.2021%20Servicii%20de%20cur%C4%83%C8%9Benie%20%C8%99i%20igienizare.pdf"
+  }
+]

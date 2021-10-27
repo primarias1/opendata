@@ -13,30 +13,46 @@ description: |
 <table class="table-fixed">
     <thead>
     <tr>
-        <th scope="col" class="w-36">Instituție</th>
+        <th scope="col" class="w-20">Instituție</th>
         <th scope="col" class="w-52">Operator economic</th>
         <th scope="col" class="w-48">Durata</th>
         <th scope="col">Denumire</th>
-        <th scope="col" class="w-20">Preț (lei)</th>
+        <th scope="col" class="w-20">Preț</th>
     </tr>
     </thead>
     <tbody>
-        {%- for item in achizitii -%}
+        {%- for contract in contracts -%}
         <tr>
-            <td>{{ item.owner }}</td>
-            <td>{{ item.company }}</td>
+            <td><abbr title="{{ contract.buyer.name }}">{{ contract.buyer.shortName }}</abbr></td>
             <td>
-                <div>{{item.startDate}} - {{ item.endDate }}</div>
-                <div class="text-sm text-gray-500">Semnat pe {{ item.signDate }}</div>
+                <div>{{ contract.seller.name }}</div>
+                <div class="text-sm text-gray-500">
+                    CUI <a href="https://www.confidas.ro/profil/{{contract.seller.fiscalCode}}/">{{contract.seller.fiscalCode }}</a>
+                </div>
             </td>
             <td>
-                <a href="{{ item.url }}">{{ item.name }}</a>
+                <div>{{contract.startDate | date: "%d.%m.%Y" }} - {{ contract.endDate | date: "%d.%m.%Y"  }}</div>
+                <div class="text-sm text-gray-500">Semnat pe {{ contract.signDate | date: "%d.%m.%Y" }}</div>
             </td>
-            <td>{{ item.value }}</td>
+            <td>
+                <a href="{{ contract.documentUrl }}">{{ contract.name }}</a>
+            </td>
+            <td class="text-right">{{ contract.value | currency }}</td>
         </tr>
         {%- endfor -%}
     </tbody>
 </table>
+
+<p class="text-sm text-gray-500 italic">Toate prețurile includ TVA.</p> 
+
+#### Legendă
+
+* **S1MB**: Sectorul 1 al Muncipiului București, reprezentând aparatul de specialitate al Primarului Sectorului 1 
+  și toate instituțiile subordonate direct primarului
+* **PLS1**: Poliția Locală Sector 1
+* **DGASPCS1**: Direcția Generală de Asistență Socială și Protecția Copilului Sector 1 
+* **CIDSDIPPS**: Compania de Investiții și Dezvoltare în Sănătate și Domenii de Interes Public-Privat Sector 1 S.A.
+* **CMC**: Complexul Multifuncțional Caraiman
 
 ## Legislație
 

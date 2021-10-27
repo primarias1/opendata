@@ -11,6 +11,15 @@ module.exports = function (config) {
         excerpt: true
     })
 
+    config.addLiquidFilter("currency", function(number) {
+        return number.toLocaleString('ro-RO', {
+            style: 'currency',
+            currency: 'lei',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    });
+
     return {
         dir: {
             // Use the `src` folder as the default root folder when building
