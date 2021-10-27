@@ -14,7 +14,7 @@ module.exports = function (config) {
     config.addLiquidFilter("currency", function(number) {
         return number.toLocaleString('ro-RO', {
             style: 'currency',
-            currency: 'lei',
+            currency: 'RON',
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
