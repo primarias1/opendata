@@ -12,12 +12,14 @@ module.exports = function (config) {
     })
 
     config.addLiquidFilter("currency", function(number) {
-        return number.toLocaleString('ro-RO', {
+        var formatter = new Intl.NumberFormat('ro-RO', {
             style: 'currency',
             currency: 'RON',
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
+
+        return formatter.format(number);
     });
 
     return {
