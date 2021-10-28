@@ -1,0 +1,13 @@
+name: scheduled-deploy
+on:
+  schedule:
+    - cron: "48 * * * *"
+
+jobs:
+  rebuild_site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: digitalocean/app_action@main
+        with:
+          app_name: opendata
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
