@@ -1,15 +1,11 @@
-module.exports = function (config) {
+require('dotenv').config();
 
+module.exports = function (config) {
     // Copy all the assets files directly
     config.addPassthroughCopy("./src/assets");
     config.setLiquidOptions({
         dynamicPartials: true
     });
-    // Allow excerpts
-    config.setFrontMatterParsingOptions({
-        // Note: default separator is ---
-        excerpt: true
-    })
 
     config.addLiquidFilter("currency", function(number) {
         var formatter = new Intl.NumberFormat('ro-RO', {

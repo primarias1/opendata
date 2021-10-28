@@ -1,4 +1,5 @@
 # Environment normalization
+/.cache
 /.env
 /.docker-compose.override.yml
 /.idea

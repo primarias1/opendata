@@ -25,14 +25,16 @@ description: |
         <tr>
             <td><abbr title="{{ contract.buyer.name }}">{{ contract.buyer.shortName }}</abbr></td>
             <td>
-                <div>{{ contract.seller.name }}</div>
+                {%- for seller in contract.sellers -%}
+                <div>{{ seller.shortName | default: seller.name }}</div>
                 <div class="text-sm text-gray-500">
-                    CUI <a href="https://www.confidas.ro/profil/{{ contract.seller.fiscalCode }}/">{{ contract.seller.fiscalCode }}</a>
+                    CUI <a href="https://www.confidas.ro/profil/{{ seller.fiscalCode }}/">{{ seller.fiscalCode }}</a>
                 </div>
+                {%- endfor -%}
             </td>
             <td>
                 <div>{{contract.startDate | date: "%d.%m.%Y" }} - {{ contract.endDate | date: "%d.%m.%Y"  }}</div>
-                <div class="text-sm text-gray-500">Semnat pe {{ contract.signDate | date: "%d.%m.%Y" }}</div>
+                <div class="text-sm text-gray-500">Semnat pe {{ contract.signingDate | date: "%d.%m.%Y" }}</div>
             </td>
             <td>
                 <a href="{{ contract.documentUrl }}">{{ contract.name }}</a>
@@ -56,23 +58,23 @@ description: |
     </tr>
     </thead>
     <tbody>
-        {%- for ann in seapAnnouncements -%}
+        {%- for notice in notices -%}
         <tr>
-            <td><abbr title="{{ ann.buyer.name }}">{{ ann.buyer.shortName }}</abbr></td>
+            <td><abbr title="{{ notice.buyer.name }}">{{ notice.buyer.shortName }}</abbr></td>
             <td>
                 <div class="text-sm text-gray-500">
-                    <a href="https://e-licitatie.ro/pub/notices/c-notice/v2/view/{{ann.id}}/">{{ ann.code }}</a>
+                    <a href="{{ notice.url }}">{{ notice.code }}</a>
                 </div>
             </td>
             <td>
-                {{ ann.name }}
+                {{ notice.name }}
             </td>
             <td>
                 <span class="px-2 inline-flex leading-5 rounded-full bg-green-100 text-green-800">
-                  Licitație deschisă
+                  {{ notice.procedureType }}
                 </span>
             </td>
-            <td class="text-right">{{ ann.value | currency }}</td>
+            <td class="text-right">{{ notice.value | currency }}</td>
         </tr>
         {%- endfor -%}
     </tbody>
@@ -82,13 +84,13 @@ description: |
 
 ### Legendă
 
-* **S1MB**: Sectorul 1 al Muncipiului București, reprezentând aparatul de specialitate al Primarului Sectorului 1 
-  și toate instituțiile subordonate direct primarului
-* **PLS1**: Poliția Locală Sector 1
-* **DGASPCS1**: Direcția Generală de Asistență Socială și Protecția Copilului Sector 1 
-* **CIDSDIPPS**: Compania de Investiții și Dezvoltare în Sănătate și Domenii de Interes Public-Privat Sector 1 S.A.
-* **CMC**: Complexul Multifuncțional Caraiman
-
+<ul>
+{%- for inst in institutions -%}
+    <li>
+        <strong>{{ inst.shortName }}</strong>: {{ inst.name }}
+    </li>
+{% endfor %}
+</ul>
 
 ### Legislație
 
