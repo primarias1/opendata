@@ -1,0 +1,32 @@
+<table class="table-fixed">
+    <thead>
+    <tr>
+        <th scope="col" class="w-20">Instituție</th>
+        <th scope="col" class="w-28">Cod SEAP</th>
+        <th scope="col">Obiectul achiziției</th>
+        <th scope="col" class="w-48">Procedură</th>
+        <th scope="col" class="w-32">Valoare estimată</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%- for notice in notices -%}
+        <tr>
+            <td><abbr title="{{ notice.buyer.title }}">{{ notice.buyer.shortTitle }}</abbr></td>
+            <td>
+                <div class="text-sm text-gray-500">
+                    <a href="{{ notice.url }}">{{ notice.code }}</a>
+                </div>
+            </td>
+            <td>
+                {{ notice.name }}
+            </td>
+            <td>
+                <span class="px-2 inline-flex leading-5 rounded-full bg-green-100 text-green-800">
+                  {{ notice.procedureType }}
+                </span>
+            </td>
+            <td class="text-right">{{ notice.value | currency }}</td>
+        </tr>
+    {%- endfor -%}
+    </tbody>
+</table>

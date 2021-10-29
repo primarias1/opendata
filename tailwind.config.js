@@ -53,7 +53,6 @@ module.exports = {
         require('@tailwindcss/forms'),
     ],
     purge: [
-        './src/**/*.liquid',
-        './src/**/*.md'
+        './src/**/*.liquid'
     ],
 }

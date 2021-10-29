@@ -15,14 +15,17 @@ module.exports = function () {
 
                 const sellers = props.sellers.map((seller) => {
                     return {
-                        name: seller.fields.name,
-                        shortName: seller.fields.shortName,
+                        title: seller.fields.title,
+                        shortTitle: seller.fields.shortTitle,
                         fiscalCode: seller.fields.fiscalCode
                     };
                 });
 
-                const documentUrls = props.documents.map((document) => {
-                    return document.fields.file.url;
+                const documents = props.documents.map((document) => {
+                    return {
+                        url: document.fields.file.url,
+                        title: document.fields.title
+                    };
                 });
 
                 return {
@@ -32,11 +35,11 @@ module.exports = function () {
                     startDate: props.startDate,
                     endDate: props.endDate,
                     buyer: {
-                        name: props.buyer.fields.name,
-                        shortName: props.buyer.fields.shortName
+                        title: props.buyer.fields.title,
+                        shortTitle: props.buyer.fields.shortTitle
                     },
                     sellers: sellers,
-                    documentUrl: documentUrls[0]
+                    documents: documents
                 };
             });
 

@@ -1,0 +1,51 @@
+---
+title: Achiziții publice și anunțuri de intenție, participare sau atribuire
+description: |
+    În vederea asigurării transparenței decizionale, contractele de achiziție publică
+    sau anunțurile de intenție, participare sau atribuire publică formulate de
+    aparatul de specialitate al Primăriei Sectorului 1, de către Compania de Investiții
+    și Dezvoltare în Sănătate și Domenii de Interes Public-Privat Sector 1 sunt publicate
+    în format electronic.
+---
+<h2>Contracte de achiziții publice</h2>
+
+{%- if contracts.size > 0 -%}
+    {% include 'achizitii/_contracts', contracts: contracts %}
+{%- else -%}
+    <p>Momentan nu există informații disponibile.</p>
+{%- endif -%}
+
+<h2>Anunțuri de participare</h2>
+
+{%- if notices.size > 0 -%}
+    {%- include 'achizitii/_notices', notices: notices -%}
+{%- else -%}
+    <p>Momentan nu există informații disponibile.</p>
+{%- endif -%}
+
+<div class="bg-gray-100 px-8 py-2 text-sm">
+
+    {%- if institutions.size > 0 -%}
+        {%- include 'achizitii/_institutions', institutions: institutions -%}
+    {%- endif -%}
+
+    <h3>Legislație</h3>
+
+    <p>Lista de legi și hotărâri de consiliu local în baza cărora sunt publicate contractele
+        de achiziții publice și anunțurile de participare la nivelul Sectorului 1:</p>
+
+    <ul>
+        <li><a href="http://legislatie.just.ro/Public/DetaliiDocument/21698">Legea 24/2000 privind normele de tehnică
+                legislativă pentru elaborarea actelor normative</a></li>
+        <li><a href="http://legislatie.just.ro/Public/DetaliiDocument/31413">Legea 544/2001 privind liberul acces la
+                informațiile de interes public</a></li>
+        <li><a href="http://legislatie.just.ro/Public/DetaliiDocument/41571">Legea 52/2003 privind transparența
+                decizională în administrația publică</a></li>
+        <li><a href="http://legislatie.just.ro/Public/DetaliiDocument/178667">Legea 98/2016 privin achizițiile
+                publice</a></li>
+        <li><a href="https://primariasector1.ro/download/hotarari-consiliu-2015/hot-233.docx">Hotărârea de Consiliu
+                Local al Sectorului 1 233/22.12.2015</a></li>
+        <li><a href="https://primariasector1.ro/download/hotarari-consiliu-2021/64.2021_Anonimizat.pdf">Hotărârea de
+                Consiliu Local al Sectorului 1 nr 64/23.03.2021</a></li>
+    </ul>
+</div>

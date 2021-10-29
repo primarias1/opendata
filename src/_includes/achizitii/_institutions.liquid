@@ -1,0 +1,9 @@
+<h3>Legendă</h3>
+
+<ul>
+    {%- for institution in institutions -%}
+        <li>
+            <strong>{{ institution.shortTitle }}</strong>: {{ institution.title }}
+        </li>
+    {%- endfor -%}
+</ul>

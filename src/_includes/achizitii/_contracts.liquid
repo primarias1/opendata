@@ -1,0 +1,17 @@
+<table class="table-fixed">
+    <thead>
+    <tr>
+        <th scope="col" class="w-20">Instituție</th>
+        <th scope="col" class="w-52">Operator economic</th>
+        <th scope="col" class="w-48">Durata</th>
+        <th scope="col">Denumire</th>
+        <th scope="col" class="w-20">Documente</th>
+        <th scope="col" class="w-20">Valoare</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%- for contract in contracts -%}
+        {% include 'achizitii/_contract_row', contract: contract %}
+    {%- endfor -%}
+    </tbody>
+</table>
