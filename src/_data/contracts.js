@@ -10,23 +10,9 @@ module.exports = function () {
         .getEntries({content_type: 'contract', order: '-fields.signingDate'})
         .then(function (response) {
             const items = response.items;
+
             const contracts = items.map((item) => {
                 const props = item.fields;
-
-                const sellers = props.sellers.map((seller) => {
-                    return {
-                        title: seller.fields.title,
-                        shortTitle: seller.fields.shortTitle,
-                        fiscalCode: seller.fields.fiscalCode
-                    };
-                });
-
-                const documents = props.documents.map((document) => {
-                    return {
-                        url: document.fields.file.url,
-                        title: document.fields.title
-                    };
-                });
 
                 return {
                     name: props.name,
@@ -38,8 +24,14 @@ module.exports = function () {
                         title: props.buyer.fields.title,
                         shortTitle: props.buyer.fields.shortTitle
                     },
-                    sellers: sellers,
-                    documents: documents
+                    seller: {
+                        title: props.seller.fields.title,
+                        shortTitle: props.seller.fields.shortTitle,
+                        fiscalCode: props.seller.fields.fiscalCode
+                    },
+                    document: {
+                        url: props.document.fields.file.url
+                    }
                 };
             });
 

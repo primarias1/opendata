@@ -1,13 +1,13 @@
 <tr>
     <td><abbr title="{{ contract.buyer.title }}">{{ contract.buyer.shortTitle }}</abbr></td>
     <td>
-        {%- for seller in contract.sellers -%}
-            <div>{{ seller.shortTitle | default: seller.title }}</div>
-            <div class="text-sm text-gray-500">
-                CUI
-                <a href="https://www.confidas.ro/profil/{{ seller.fiscalCode }}/">{{ seller.fiscalCode }}</a>
-            </div>
-        {%- endfor -%}
+        <div>{{ contract.seller.shortTitle | default: contract.seller.title }}</div>
+        <div class="text-sm text-gray-500">
+            CUI
+            <a href="https://www.confidas.ro/profil/{{ contract.seller.fiscalCode }}/">
+                {{ contract.seller.fiscalCode }}
+            </a>
+        </div>
     </td>
     <td>
         <div>{{ contract.startDate | date: "%d.%m.%Y" }} - {{ contract.endDate | date: "%d.%m.%Y" }}</div>
@@ -17,13 +17,9 @@
         {{ contract.name }}
     </td>
     <td>
-        {%- for document in contract.documents %}
-            {%- if document.title == "Contract" %}
-                {%- include 'achizitii/_contract_item_document', document: document -%}
-            {%- else -%}
-                {%- include 'achizitii/_contract_item_annex', annex: document -%}
-            {% endif %}
-        {%- endfor -%}
+        <span class="px-2 inline-flex leading-5 bg-green-100 text-green-800">
+            <a href="{{ contract.document.url }}" class="no-underline">Contract</a>
+        </span>
     </td>
     <td class="text-right">{{ contract.value | currency }}</td>
 </tr>
